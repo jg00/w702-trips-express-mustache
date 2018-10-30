@@ -44,12 +44,19 @@ app.post('/addTrip', (req,res) => {
     res.redirect("/");
 });
 
-// Not working
-app.delete('/deleteTrip', (req,res) => {
+
+app.post('/deleteTrip', (req,res) => {
 
     let id = req.body.id;
 
-    res.send(id);
+    let getObjIfExists = trips.find(function(trip){
+        return trip.id === parseInt(id)
+    });
+
+    let indexOfObj = trips.indexOf(getObjIfExists)
+    trips.splice(indexOfObj,1)
+
+    res.redirect("/");
 });
 
 

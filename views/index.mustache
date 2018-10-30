@@ -47,9 +47,9 @@
             <li>{{title}} - Depart: {{departureDate}} Return: {{returnDate}} - Id: {{id}}
                 <div>
                     <img id="imgTrip" src="{{imageUrl}}">
-                    <form action="/deleteTrip" method="DELETE">
+                    <form action="/deleteTrip" method="POST">
                         <input type="hidden" name="id" value="{{id}}"/>
-                        <input type="submit"/>
+                        <input type="submit" value="Remove Trip"/>
                     </form>
                 </div>
             </li>
